@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: pink;
+            font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+        }
+        
+        h1{
+            width: 80%;
+            text-align: center;
+            margin: 100px auto;
+        }
+        
+        h1>span{
+            color: white;
+            font-size: 9em;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            transition: 1s linear;
+            
+        }
+        h1>span::before,
+        h1>span::after{
+            content: attr(data-txt);
+            text-transform: uppercase;
+            position: absolute;
+            top: -4px;left: 0;
+            transition: .5s linear;
+
+        }
+        h1>span::before{
+            color: rgba(128, 128, 128, 0.479);
+            z-index: -1;
+            transform: skewY(7deg);
+            transform-origin: 0;
+        }
+        h1>span::after{
+            color: rgb(114, 7, 109);
+            transform-origin: left;
+            transform: perspective(900px) rotateY(-35deg);
+        }
+        h1>span:hover::before{
+            transform: skewY(1deg);
+        }
+        h1>span:hover::after{
+            transform: perspective(900px) rotateY(1deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span data-txt="s">s</span>
+        <span data-txt="a">a</span>
+        <span data-txt="e">e</span>
+        <span data-txt="e">e</span>
+        <span data-txt="d">d</span>
+  </h1>
+</body>
+</html>
